@@ -3,24 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="https://fav.farm/📸" />
-    <title>Post Generator</title>
+    <link rel="icon" type="image/svg+xml" href="https://fav.farm/📜" />
+    <title>Post Meta Generator</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <h1>🖌️<a href="https://joyofcode.xyz/">Joy of Code</a> Post Generator</h1>
+    <h1>🖌️<a href="https://joyofcode.xyz/">Joy of Code</a></h1>
 
     <section class="social">
       <h2>Social Card</h2>
-      <div class="card" card-node>
+      <div class="card" data-card>
         <span class="card-logo">Joy of Code</span>
         <span class="card-title" contenteditable>Placeholder Title</span>
       </div>
-      <button card-save>Save</button>
+      <button data-save>Save</button>
     </section>
 
     <section class="frontmatter">
       <h2>Frontmatter</h2>
+      <form>
+        <input type="text" placeholder="Title" data-title />
+        <input type="text" placeholder="Description" data-description />
+        <select data-category>
+          <option value="none" selected disabled hidden>Category</option>
+          <option value="css">CSS</option>
+          <option value="general">General</option>
+          <option value="design">Design</option>
+          <option value="git">Git</option>
+          <option value="javascript">JavaScript</option>
+          <option value="next">Next</option>
+          <option value="react">React</option>
+          <option value="typescript">TypeScript</option>
+        </select>
+      </form>
+      <div class="text-container">
+        <button class="text-copy" data-copy>📋</button>
+        <pre data-frontmatter></pre>
+      </div>
     </section>
 
     <script type="module" src="/src/main.ts"></script>
