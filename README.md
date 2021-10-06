@@ -1,7 +1,5 @@
-# Social Share Image Generator
+# Post Meta Creator
 
-This is a post meta generator for posts I write at [Joy of Code](https://joyofcode.xyz/).
+This is a post meta creator for posts I write at 🖌️ [Joy of Code](https://joyofcode.xyz/).
 
-You can read [Generate Social Share Images](https://joyofcode.xyz/generate-social-share-image) if you're interested in creating one for yourself.
-
-Generate Social Share Image
+You can read 🔗 [Automate Social Share Images For Your Posts](https://joyofcode.xyz/automate-social-share-images) if you're interested in creating one for yourself.
