@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 /*
   Variables
@@ -6,14 +6,17 @@
 
 :root {
   --font: 'Inter', sans-serif;
-  --primary-heading: 2rem;
-  --secondary-heading: 1.4rem;
+  --primary-heading: 4rem;
+  --secondary-heading: 2rem;
 
   --blue-10: hsl(220 20% 10%);
   --blue-12: hsl(220 20% 12%);
   --blue-14: hsl(220 20% 14%);
   --blue-20: hsl(220 20% 20%);
+  --blue-50: hsl(240 100% 50%);
+  --white-60: hsl(0 0% 60%);
   --white-98: hsl(0 0% 98%);
+  --black-0: hsl(0 0% 0%);
 
   --spacing-1: 1rem;
   --spacing-2: 2rem;
@@ -34,6 +37,10 @@
   outline: none;
 }
 
+::placeholder {
+  color: var(--white-60);
+}
+
 html,
 body {
   height: 100%;
@@ -41,21 +48,23 @@ body {
 
 body {
   font-family: var(--font);
-  font-weight: 300;
   color: var(--white-98);
   background-color: var(--blue-14);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 h1 {
   padding: var(--spacing-2);
   font-size: var(--primary-heading);
-  font-weight: 700;
 }
 
 h2 {
   padding: var(--spacing-2) 0;
   font-size: var(--secondary-heading);
-  font-weight: 400;
 }
 
 button {
@@ -77,6 +86,7 @@ button:active {
 a {
   display: inline-block;
   color: var(--white-98);
+  text-decoration: none;
 }
 
 input,
@@ -100,35 +110,35 @@ pre {
   Social
 */
 
-.social {
-  padding: 0 var(--spacing-2);
-  background-color: var(--blue-12);
-}
-
 .card {
   --card-spacing: 2rem;
   --card-logo: 1.2rem;
   --card-title: 6rem;
 
-  height: 630px;
-  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--spacing-2);
   position: relative;
   background-image: url('/neon.svg');
   background-size: cover;
+  overflow: hidden;
+  z-index: 10;
 }
 
-.card::before {
+.card::after {
   content: '';
+  width: 1200px;
+  height: 630px;
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(hsl(240 100% 50%), hsl(0 0% 0%));
+  background-image: radial-gradient(var(--blue-50), var(--black-0));
   opacity: 0.4;
+  z-index: -10;
 }
 
 .card-logo {
-  position: absolute;
-  top: var(--card-spacing);
-  left: var(--card-spacing);
   padding: 0.8rem;
   font-size: var(--card-logo);
   font-weight: 700;
@@ -138,10 +148,7 @@ pre {
 }
 
 .card-title {
-  max-width: 60%;
-  position: absolute;
-  bottom: var(--card-spacing);
-  left: var(--card-spacing);
+  max-width: 90%;
   font-size: var(--card-title);
   font-weight: 900;
   text-shadow: 2px 2px 2px hsla(0 0% 0% / 20%);
@@ -151,14 +158,8 @@ pre {
   Frontmatter
 */
 
-.frontmatter {
-  padding: 0 var(--spacing-2);
-  background-color: var(--blue-10);
-}
-
 .text-container {
   margin: var(--spacing-2) 0;
-  position: relative;
 }
 
 .text-copy {
